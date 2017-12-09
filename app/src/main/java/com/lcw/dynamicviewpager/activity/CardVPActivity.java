@@ -16,7 +16,7 @@ public class CardVPActivity extends AppCompatActivity {
 
     private RelativeLayout mRelativeLayout;
     private ViewPager mViewPager;
-    private int[] mImages={R.mipmap.a,R.mipmap.b,R.mipmap.c,R.mipmap.d,R.mipmap.e};
+    private int[] mImages={R.mipmap.b,R.mipmap.d,R.mipmap.e,R.mipmap.f,R.mipmap.g,R.mipmap.h};
     private ViewPagerAdapter mViewPagerAdapter;
 
     @Override
@@ -28,7 +28,6 @@ public class CardVPActivity extends AppCompatActivity {
         mViewPagerAdapter=new ViewPagerAdapter(this,mImages);
         mViewPager.setAdapter(mViewPagerAdapter);
         mViewPager.setOffscreenPageLimit(5);
-        mViewPager.setPageMargin(40);
         mViewPager.setPageTransformer(true,new CardTransformer());
     }
 

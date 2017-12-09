@@ -2,9 +2,12 @@ package com.lcw.dynamicviewpager.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.lcw.dynamicviewpager.utils.DensityUtil;
 
 /**
  * ViewPager适配器
@@ -37,8 +40,9 @@ public class ViewPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView imageView = new ImageView(mContext);
+        imageView.setLayoutParams(new ViewGroup.LayoutParams(DensityUtil.dip2px(mContext,200),DensityUtil.dip2px(mContext,400)));
         imageView.setImageResource(mImages[position]);
-        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         container.addView(imageView);
         return imageView;
     }
